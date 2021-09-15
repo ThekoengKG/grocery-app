@@ -1,0 +1,51 @@
+<div class="container">
+    
+
+    <h2>Users List</h2>
+   
+
+  <div class="d-flex align-items-center">
+    <a routerLink='/create' class="btn btn-success">Add</a> &nbsp; 
+    <a routerLink='/admin-products' class="btn btn-primary">User List</a> 
+  </div>
+    
+    <ng-container>
+        <div class="row">
+            <div class="col my-4">
+              <table class="table">
+                <thead class="table-dark">
+                <tr class="text-center">
+                  <th>#</th>
+                  <th>Product Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Edits</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor = 'let u of users'>
+                  <td><p>{{u.id}}</p></td>
+                  <td><p>{{u.fullnames}}</p></td>
+                  <td>
+                    <p>{{u.username}}</p>
+                  </td>
+                  <td>{{u.email}}</td>
+                  <td>{{u.password}}</td>
+                  <td> 
+                    <a routerLink='/user-update' class="btn btn-outline-primary">Update</a> &nbsp;
+                    <a class="btn btn-outline-danger" (click)="removeUser(u.id)">Delete<i class="fa fa-trash"></i></a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+      
+      
+            </div>
+      
+      
+        </div>
+
+    </ng-container>
+
+</div>
+
